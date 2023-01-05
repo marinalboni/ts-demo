@@ -1,5 +1,10 @@
+import { Curso } from "./models/Curso";
+import Estudiante from "./models/Estudiante";
+import { LISTA_CURSOS } from './mock/cursos.mock';
+
 // *****DECLARAR VARIABLES
 // Builtin Types: string, number, boolean, void, null, undefined
+
 
 var name: string = 'Marina';
 // no se puede, da error por tipo -> name = 282;
@@ -354,13 +359,13 @@ function mostrarError(error: string | number): void {
 
 // Local Storage y Session Storage
 
-function guardarLS(): void {
-    localStorage.setItem('nombre', 'Marina'); //clave, valor
-}
+// function guardarLS(): void {
+//     localStorage.setItem('nombre', 'Marina'); //clave, valor
+// }
 
-function leerLS(): void {
-    let blabla = localStorage.getItem('nombre'); //clave
-}
+// function leerLS(): void {
+//     let blabla = localStorage.getItem('nombre'); //clave
+// }
 
 
 //Cookies con npm cookies-utils 
@@ -413,8 +418,24 @@ miTemporizador.empezar(); //iniciará el timeout
 
 
 
-// ***** EXTENDER DE EVENT TARGET
 
-class Temporizador2 extends Temporizador {
+// ***** CLASES
+//en otros archivos
 
-}
+
+//Creamos un curso
+
+const listaCursos: Curso[] = LISTA_CURSOS;
+
+const estudiante1: Estudiante = new Estudiante('Marina', listaCursos, 'Böni');
+
+
+console.log(`${estudiante1.name} estudia ${estudiante1.cursos.forEach((curso: Curso) => curso.nombre)}`)
+
+//Saber horas estudias por estudiante1
+
+estudiante1.horasEstudiadas; //number
+
+//saber la instancia de un objeto/variable
+// - TypeOf - chequea el tipo primitivo (string, boolean, number, object)
+// - InstanceOf - chequea si es de una class
