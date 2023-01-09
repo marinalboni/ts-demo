@@ -17,7 +17,6 @@ export default class Estudiante {
         this.cursos = cursos;
     }
 
-
     //Propriedades - no son funciones - a la hora de llamarla no ponemos ()
     //get, set
     get horasEstudiadas(): number {

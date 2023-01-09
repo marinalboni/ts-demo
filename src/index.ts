@@ -1,6 +1,7 @@
 import { Curso } from "./models/Curso";
 import Estudiante from "./models/Estudiante";
 import { LISTA_CURSOS } from './mock/cursos.mock';
+import { Worker } from "./models/Persona";
 
 // *****DECLARAR VARIABLES
 // Builtin Types: string, number, boolean, void, null, undefined
@@ -359,13 +360,13 @@ function mostrarError(error: string | number): void {
 
 // Local Storage y Session Storage
 
-// function guardarLS(): void {
-//     localStorage.setItem('nombre', 'Marina'); //clave, valor
-// }
+function guardarLS(): void {
+    localStorage.setItem('nombre', 'Marina'); //clave, valor
+}
 
-// function leerLS(): void {
-//     let blabla = localStorage.getItem('nombre'); //clave
-// }
+function leerLS(): void {
+    let blabla = localStorage.getItem('nombre'); //clave
+}
 
 
 //Cookies con npm cookies-utils 
@@ -436,6 +437,30 @@ console.log(`${estudiante1.name} estudia ${estudiante1.cursos.forEach((curso: Cu
 
 estudiante1.horasEstudiadas; //number
 
+
+
 //saber la instancia de un objeto/variable
 // - TypeOf - chequea el tipo primitivo (string, boolean, number, object)
 // - InstanceOf - chequea si es de una class
+
+let fecha = new Date(1993,5,10);
+
+if(fecha instanceof Date) {
+    console.log('es una instancia de Date')
+}
+
+let worker1 = new Worker('Amanda', 'Linda', 30, 1600);
+
+worker1.saludar()
+
+
+
+
+// *****DECORADORES EXPERIMENTALES -> @
+
+// - Clases
+// - Parametros
+// - Métodos
+// - Propriedades
+
+
